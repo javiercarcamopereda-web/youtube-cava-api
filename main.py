@@ -5,6 +5,9 @@ import os
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {"status": "API running"}
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 
 class ChannelRequest(BaseModel):
